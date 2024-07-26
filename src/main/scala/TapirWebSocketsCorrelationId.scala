@@ -24,7 +24,6 @@ object TapirWebSocketsCorrelationId extends IOApp.Simple {
   private val serverOptions = Http4sServerOptions
     .customiseInterceptors[IO]
     .prependInterceptor(LoggingContextInterceptor)
-    .serverLog(None)
     .options
 
   private val wsRoutes = Http4sServerInterpreter[IO](serverOptions)
